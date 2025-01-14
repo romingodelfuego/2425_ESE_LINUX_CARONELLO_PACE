@@ -1,0 +1,5 @@
+Ok donc on a ecris un premier chenillard en utilisant les     "/sys/class/leds/fpga_led8/brightness" directement
+
+Ensuite on essaie d'utiliser les nmap pour faire le chenillard
+
+Et finalement,  on va ecrire un module qui ressemble donc a la version precedente puis on le balancera sur la carte SoC
