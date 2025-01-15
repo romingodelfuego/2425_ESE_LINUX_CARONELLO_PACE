@@ -101,9 +101,13 @@ echo "1" > /sys/class/leds/fpga_led1/brightness
 Dans la ligne de code précédente on a echo « 1 » qui allume une led et echo « 0 » pour éteindre la led. Pour modifié quelle led est allumée ou éteinte on modifie « fpga_led1 » J’ai testé différentes LEDs en modifiant le numéro de la LED et cela me permet d’allumer plusieurs led en meme temps
 
 
+<p align="center">
+  <img src="Image/image1.png" alt="allumer et eteindre une led" width="600" height="auto">
+</p>
 
-"inserer image 1"
-"insérer image 2"
+<p align="center">
+  <img src="Image/image2.png" alt="allumer et eteindre une led" width="600" height="auto">
+</p>
 
 #### 1.4.4 Chenillard
 Enfin, j'ai écrit un programme en C pour créer un chenillard qui allume et éteint les LEDs en séquence. Le programme ouvre et écrit dans les fichiers /sys/class/leds/fpga_ledX/brightness pour manipuler les LEDs à intervalles réguliers. Le programme réalise un chenillard en allumant et éteignant la LED à intervalles réguliers. Après la compilation et l'exécution du programme, les LEDs ont bien clignoté comme prévu.
@@ -136,8 +140,12 @@ sudo rmmod hello
 
 En utilisant la ligne dsmed on peut voir la compilation du code hello.c :
 
-"inserer image 3"
-"insérer image 4"
+<p align="center">
+  <img src="Image/image3.png" alt="hello world" width="600" height="auto">
+</p>
+<p align="center">
+  <img src="Image/image4.png" alt="hello world" width="600" height="auto">
+</p>
 
 ### 2.3 CrossCompilation de modules noyau
 
@@ -163,7 +171,9 @@ sudo apt install binutils-multiarch"
 
 On note le chemin vers ces compilateurs qui est usr/bin/arm-linux-gnueabihf-gcc
 
-"Inserez image 5"
+<p align="center">
+  <img src="Image/image5.png" alt="chemin vers compilateurs" width="600" height="auto">
+</p>
 
 #### 2.3.2 Récupéreation de la configuration actuelle du noyau
 
@@ -182,7 +192,9 @@ mv config .config
 
 tel que nous pouvons le voir sur l'image
 
-"inserez image6
+<p align="center">
+  <img src="Image/image6.png" alt="renommer le fichier" width="600" height="auto">
+</p>
 
 Placez le fichier .config dans le dossier contenant les sources du noyau, puis exécutez les commandes suivantes :
 
@@ -218,11 +230,18 @@ Puis de la mêùe manière qu'à la partie 2.2 on teste le module avec dsmeg et 
 
 Dans cette dernière sous partie on va donc faire un chenillard on utlisant les modules de noyaux. Pour cela on va écrire un code en langaeg C. Et on va ensuite tester ce module commme précédement avec la commande dsmeg. On va simuler l'allumage des led de facon succéssive tel que l'image ci-dessous nous le montre
 
-"inserez image7"
+<p align="center">
+  <img src="Image/image7.png" alt="allumer eteindre une led" width="600" height="auto">
+</p>
 
 Ensuite on complète notre code pour que l'on puisse modifier la vitesse, on modifie la vitesse avec la commande echo "100" et on voit que cette vitesse a été modifiée avec la simulation par speed updated to 100
 
-"inserez image 8 et image9"
+<p align="center">
+  <img src="Image/image8.png" alt="modification vitesse" width="600" height="auto">
+</p>
+<p align="center">
+  <img src="Image/image9.png" alt="modification vitesse" width="600" height="auto">
+</p>
 
 ## 3 Device tree
 
@@ -273,11 +292,18 @@ On reboot la carte et pour vvérifier les modifications on effectue la ligne de 
 x/proc/device-tree/sopc@0/.
 ````
 
-"inserez l'image 10"
+<p align="center">
+  <img src="Image/image10.png" alt="verification" width="600" height="auto">
+</p>
 
 ### 3.1 module accedant au LED via /dev
 
 Une fois qu'on a réccupéré le fichier gpio-led.c pour le simuler on le fait passer en top module avec la fonction -lsmod
 
-"inserez image11 et image12"
+<p align="center">
+  <img src="Image/image11.png" alt="gpio-led.c" width="600" height="auto">
+</p>
+<p align="center">
+  <img src="Image/image12.png" alt="gpio-led.c" width="600" height="auto">
+</p>
 
